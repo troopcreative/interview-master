@@ -1,17 +1,22 @@
 import React from "react";
 
-function Product({ rating = 3, maxRating = 5 }) {
+function Rating({ rating = 0, maxRating = 5, onRate = () => {} }) {
   const generateRating = () => {
     let finalRating = [];
     for (let x = 0; x < maxRating; x += 1) {
+      const normalRating = x + 1;
       finalRating.push(
-        <div className={`rating-pip ${x + 1 <= rating ? "active" : ""}`} />
+        <div
+          key={x}
+          className={`rating-pip ${normalRating <= rating ? "active" : ""}`}
+          onClick={() => onRate(normalRating)}
+        />
       );
     }
     return finalRating;
   };
 
-  return <div class="rating">{generateRating()}</div>;
+  return <div className="rating">{generateRating()}</div>;
 }
 
-export default Product;
+export default Rating;

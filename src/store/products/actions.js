@@ -1,4 +1,5 @@
 export const LOAD_PRODUCTS = "LOAD_PRODUCTS";
+export const RATE_PRODUCT = "RATE_PRODUCT";
 
 export const loadProducts = () => ({
   type: LOAD_PRODUCTS,
@@ -6,22 +7,32 @@ export const loadProducts = () => ({
     {
       id: 1,
       title: "Nike Trainers",
-      description: "Some Nike trainers you might like to buy"
+      description: "Some Nike trainers you might like to buy",
+      rating: 0,
     },
     {
       id: 2,
       title: "Addidas Trainers",
-      description: "Some Addidas trainers you might like to buy"
+      description: "Some Addidas trainers you might like to buy",
+      rating: 0,
     },
     {
       id: 3,
       title: "Puma Trainers",
-      description: "Some Puma trainers you might like to buy"
+      description: "Some Puma trainers you might like to buy",
+      rating: 0,
     },
     {
       id: 4,
       title: "New Balance Trainers",
-      description: "Some New Balance trainers you might like to buy"
+      description: "Some New Balance trainers you might like to buy",
+      rating: 0,
     }
   ]
+});
+
+export const rateProduct = (id, rating) => ({
+  type: RATE_PRODUCT,
+  id,
+  rating,
 });
