@@ -8,9 +8,20 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <header className="App-header">
-          <h1>Products R Us</h1>
+        <header className="header container">
+          <h1 className="logo">
+            Products
+            <span className="text-blue">R</span>
+            us
+          </h1>
         </header>
+
+        <div className="container">
+          <h2 className="title">
+            Products for sale
+          </h2>
+        </div>
+
         <Products />
       </div>
     </Provider>

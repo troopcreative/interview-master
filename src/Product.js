@@ -4,12 +4,20 @@ import Rating from "./Rating";
 function Product({ product, onRate = () => {} }) {
   return (
     <div className="product">
-      <h2>{product.title}</h2>
-      <p>{product.description}</p>
-      <Rating
-        rating={product.rating}
-        onRate={onRate}
-      />
+      <div className="container">
+        <h3 className="title">{product.title}</h3>
+        <p className="description">{product.description}</p>
+
+        <div className="rating-container">
+          <span className="rating-text">
+            Rating:
+          </span>
+          <Rating
+            rating={product.rating}
+            onRate={onRate}
+          />
+        </div>
+      </div>
     </div>
   );
 }
